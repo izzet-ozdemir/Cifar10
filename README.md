@@ -30,3 +30,10 @@ Veri seti aşağıdaki işlemlere tabi tutumuştur:
 Optimizasyon algoritmaları, modelin kayıp fonksiyonunu minimize ederek modelin daha iyi performans göstermesini sağlar. Bu çalışmada RMSprop ve ADAM optimizer ları karşılaştırılarak, aynı koşullarda hangisinin daha iyi sonuç verdiği incelenmiştir.
 * Adam algoritması, eğitim boyunca öğrenme oranını ayarlar. Öğrenme oranı, model için optimal ağırlıkların ne kadar hızlı hesaplandığını belirler.
 * RMSprop, her bir parametrenin öğrenme oranını ayarlamak için gradientlerin karelerini almak yerine karesel gradyanın hareketli ortalamasını kullanan bir optimizasyon algoritmasıdır. Bu sayede parametre değişimlerindeki dağılımların önüne geçilir ve bazı durumlarda da yakınsamayı oldukça iyileştirebilir.
+
+RMSprop optimizer eğitimli test sonuçlarına baktığımızda loss ve acc olarak training ve validation sonuçlarının birbirine paralellik gösterdiğini ve dengeli ve aşarılı bir çalışma olduğu söyleyebiliriz.
+Loss değerinin epoch sayısı arttıkça düştüğü görülmektedir. Buna karşılık acc değeri de düzenli bir şekilde artmaktadır. Epoch değeri 30 olarak test edilsede daha önce yapılan çalışmalarda epoch değeri 50 olarak test edilmiş ve daha iyi sonuçların alındığı gözlenmiştir.
+
+Adam optimizer sonuçları incelendiğinde hem loss hemde acc değerlerinin traing ve validation sonuçlarının 15 ile 20 epoch arasında kesiştiği gözlenmiştir. Bu bir over-fitting durumu olarak nitelendirilmektedir. Bu nedenle eğitimin belirtilen epoch noktalarının uygun görülen kısmında durdurulmasında fayda vardır.
+
+
